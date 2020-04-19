@@ -1,17 +1,13 @@
 <template>
-  <div id="app">
-    <math-puzzle/>
+  <div id="main">
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import MathPuzzle from './components/MathPuzzle.vue'
-
-
 export default {
-  name: 'app',
+  name: 'home',
   components: {
-    MathPuzzle,
   }
 }
 </script>
@@ -20,15 +16,25 @@ export default {
 body{
   margin: 0;
   padding: 0;
+  font-size: 2em;
 }
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+#main {
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: black;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border: 10px solid blue;
+  height: 100vh;
+}
+.btn {
+  height: 40px;
+  padding: 15px 40px;
+  color: white;
+  background-color: blue;
+  text-decoration: none;
 }
 </style>
