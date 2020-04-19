@@ -1,6 +1,6 @@
 <template>
-  <div class="outer-container">
-    <h2 class="timer">{{ $store.getters.secondsLeft }}</h2>
+  <div class="timer-container">
+    <h2 class="timer" v-bind:class="{ warning: isFiveOrLess }">{{ $store.getters.secondsLeft }}</h2>
   </div>
 </template>
 
@@ -29,6 +29,14 @@ export default {
       }), this.secondsLeft*1000;
     },
   },
+  computed: {
+    isFiveOrLess() {
+      if(this.$store.getters.secondsLeft < 6) {
+        return true
+      }
+      return false;
+    }
+  },
   created() {
     this.timer();
   }
@@ -36,10 +44,11 @@ export default {
 </script>
 
 <style>
-.outer-container {
+.timer-container {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  margin-bottom: 2em;
 }
 .timer {
   font-size: 4em;
@@ -49,5 +58,9 @@ export default {
   color: white;
   margin: 0;
   padding: 10px 0px;
+}
+.warning {
+  background-color: red;
+  border-radius: 20px 20px 0 0;
 }
 </style>
