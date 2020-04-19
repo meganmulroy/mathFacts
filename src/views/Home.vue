@@ -1,10 +1,13 @@
 <template>
   <div class="start">
-      <div>
-          <p>How many addition problems can you answer correctly in 30 seconds?</p>
-          <router-link v-bind:to="{name: 'game'}" class="btn">START</router-link>
-          <!-- <a class="btn" v-on:click.prevent="timer(); newQuestion();">START</a> -->
-      </div>
+    <div class="head-container">
+
+    </div>
+    <div>
+        <p>How many addition problems can you answer correctly in 30 seconds?</p>
+        <router-link v-bind:to="{name: 'game'}" class="btn">START</router-link>
+        <!-- <a class="btn" v-on:click.prevent="timer(); newQuestion();">START</a> -->
+    </div>
   </div>
 </template>
 
@@ -34,7 +37,11 @@ export default {
     flex-direction: column;
     justify-content: space-around;
     max-width: 100%;
-    font-weight: bold;
-    color: blue;
+  }
+  .head-container {
+    height: 4.7em;
+    margin-bottom: 2em;
+    background-color: blue;
+    padding: 10px 0px;
   }
 </style>

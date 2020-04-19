@@ -35,8 +35,6 @@ export default {
       numberTwo: 10,
       operation: "+",
       answer: "",
-      // correctCount: 0,
-      // incorrectCount: 0
     };
   },
   methods: {
@@ -56,12 +54,6 @@ export default {
       this.numberTwo = this.random21();
       this.answer = "";
     },
-    resetQuiz() {
-      // this.correctCount = 0;
-      this.$store.dispatch("addCorrect", -(this.$store.getters.correct));
-
-      this.incorrectCount = 0;
-    }
 	},
 	created() {
     this.newQuestion();
@@ -73,7 +65,7 @@ export default {
 div.mathProblem {
   width: 30vw;
   margin: 0 auto 10px auto;
-  border-bottom: 2px solid darkslategrey;
+  border-bottom: 5px solid black;
 }
 span.left {
   display: inline-block;
@@ -93,12 +85,11 @@ div.mathProblem p {
   margin: 0;
 }
 input {
-  height: 30px;
+  height: 65px;
   width: 30vw;
   font-size: 2em;
   text-align: center;
   padding: 0;
-  color: darkslategrey;
 }
 div.score {
   text-transform: uppercase;
